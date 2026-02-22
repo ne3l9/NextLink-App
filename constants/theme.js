@@ -6,7 +6,7 @@ export const theme = {
     darkLight: '#E1E1E1',
     gray: '#e3e3e3',
 
-    text: '#494949',
+    text: '#110e0e',
     textLight: '#7C7C7C',
     textDark: '#1D1D1D',
 
