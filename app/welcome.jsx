@@ -19,13 +19,12 @@ const Welcome = () => {
         <View style={{ gap: hp(2) }}>
           <Text style={styles.title}>NextLink</Text>
           <Text style={styles.punchline}>
-            This is a simple welcome screen. You can customize it as per your
-            needs.
+            Connecting minds. Empowering futures.
           </Text>
         </View>
         <View style={styles.footer}>
           {/* You can add a button here to navigate to the next screen */}
-          <Button title="Get Started" />
+          <Button title="Get Started" onPress={() => console.log("Hello Brother")} />
         </View>
       </View>
     </ScreenWrapper>
