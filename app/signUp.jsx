@@ -11,6 +11,7 @@ import { hp, wp } from '../helpers/common'
 import Input from '../components/Input'
 import Button from '../components/Button'
 import Loading from '../components/Loading'
+import { Pressable } from 'react-native'
 
 const login = () => {
   const router = useRouter();
@@ -33,21 +34,25 @@ const login = () => {
       <Backbutton router={router} />
       {/* welcome */}
       <View>
-        <Text style={styles.welcomeText}>Hey,</Text>
-        <Text style={styles.welcomeText}>Welcome Back.</Text>
+        <Text style={styles.welcomeText}>Lets</Text>
+        <Text style={styles.welcomeText}>get started.</Text>
       </View>
       {/* form */}
       <View style={styles.form}>
         <Text style={{ fontSize: hp(1.5), color: theme.colors.text }}>
-          Please login to continue
+          Please sign up to continue
         </Text>
 
+        <Input
+          icon={<Icon name="user" size={26} strokeWidth={1.6} />}
+          placeholder="Enter your Username"
+          onChangeText={value => emailRef.current = value}
+        />
         <Input
           icon={<Icon name="mail" size={26} strokeWidth={1.6} />}
           placeholder="Enter your email"
           onChangeText={value => emailRef.current = value}
         />
-
         <Input
           icon={<Icon name="lock" size={26} strokeWidth={1.6} />}
           placeholder="Enter your password"
@@ -55,22 +60,31 @@ const login = () => {
           onChangeText={value => passwordtRef.current = value}
         />
 
-        <Text style={styles.forgotPassword}>
+        <Input
+          icon={<Icon name="lock" size={26} strokeWidth={1.6} />}
+          placeholder="Confirm your password"
+          secureTextEntry
+          onChangeText={value => passwordtRef.current = value}
+        />
+
+        {/* <Text style={styles.forgotPassword}>
           Forgot Password?
-        </Text>
+        </Text> */}
         {/* login button */}
-        <Button title="Login" loading={loading} onPress={onSubmit} />
+        <Button title="Sign Up" loading={loading} onPress={onSubmit} />
       </View>
 
       </View>
       {/* footer */}
       <View style={styles.footer}>
         <Text style={styles.footerText}>
-          Don't have an account?
+          Already have an account?
         </Text>
-        <Text style={[styles.footerText, { color: theme.colors.primary }]}>
-          Sign Up
-        </Text>
+        <Pressable>
+          <Text style={[styles.footerText, { color: theme.colors.primary }]}>
+            Sign In
+          </Text>
+        </Pressable>
       </View>
     </ScreenWrapper>
   )

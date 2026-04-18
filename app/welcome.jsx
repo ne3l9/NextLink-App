@@ -1,12 +1,16 @@
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text, View, Pressable } from "react-native";
 // import { WebView } from "react-native-webview";
 import { StatusBar } from "expo-status-bar";
 import Button from "../components/Button.jsx";
 import ScreenWrapper from "../components/ScreenWraper";
 import { theme } from "../constants/theme";
 import { hp, wp } from "../helpers/common";
+import { useRouter } from "expo-router";
+import login from "./login.jsx";
+import signUp from "./signUp.jsx";
 
 const Welcome = () => {
+  const router = useRouter();
   return (
     <ScreenWrapper bgColor={theme.colors.bgLight}>
       <StatusBar style="dark" />
@@ -22,11 +26,26 @@ const Welcome = () => {
             Connecting minds. Empowering futures.
           </Text>
         </View>
-        <View style={styles.footer}>
-          {/* You can add a button here to navigate to the next screen */}
-          <Button title="Get Started" onPress={() => console.log("Hello Brother")} />
-        </View>
+
+          <Button title="Get Started"
+          onPress={() => router.push('signUp')}/>
+          
       </View>
+      
+      {/*footer*/}
+      
+      <View style={styles.footer}>
+        <Text>Already Have a account?</Text>
+         
+        <Pressable>
+          <Text style={{ color: theme.colors.primary }}
+          onPress={() => router.push('login')}>Login</Text>
+        </Pressable>
+      </View>
+      <View style={styles.footer}>
+        <Text>© 2024 NextLink. All rights reserved.</Text>
+      </View>
+
     </ScreenWrapper>
   );
 };
