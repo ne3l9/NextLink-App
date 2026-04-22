@@ -68,7 +68,7 @@ const login = () => {
         <Text style={styles.footerText}>
           Don't have an account?
         </Text>
-        <Text style={[styles.footerText, { color: theme.colors.primary }]}>
+        <Text style={[styles.footerText, { color: theme.colors.primary }] } onPress={() => router.push('/signUp')}>
           Sign Up
         </Text>
       </View>

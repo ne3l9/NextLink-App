@@ -81,7 +81,9 @@ const login = () => {
           Already have an account?
         </Text>
         <Pressable>
-          <Text style={[styles.footerText, { color: theme.colors.primary }]}>
+          {/*Routing towards login*/}
+          
+          <Text style={[styles.footerText, { color: theme.colors.primary }] } onPress={() => router.push('/login')}>
             Sign In
           </Text>
         </Pressable>
